@@ -9,7 +9,7 @@ import (
 const AddressSize = 20 // bytes
 
 type PublicKey struct {
-	network.Network
+	Network network.Network
 	Address []byte
 }
 
