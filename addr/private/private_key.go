@@ -70,8 +70,8 @@ func NewFromExponent(exponent []byte) (pk *PrivateKey, err error) {
 	return NewFromNetworkAndExponent(network.Main, exponent)
 }
 
-func (pk PrivateKey) PublicKey() *public_key.PublicKey {
-	return &public_key.PublicKey{
+func (pk PrivateKey) PublicKey() *public.PublicKey {
+	return &public.PublicKey{
 		Network: pk.Network,
 		Address: pk.PublicAddress(),
 	}
