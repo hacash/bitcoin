@@ -2,8 +2,8 @@ package public
 
 import (
 	"fmt"
-	"github.com/steakknife/bitcoin/network"
-	"github.com/steakknife/bitcoin/util/key"
+	"github.com/hacash/bitcoin/network"
+	"github.com/hacash/bitcoin/util/key"
 )
 
 const AddressSize = 20 // bytes

@@ -3,8 +3,8 @@ package private
 import (
 	"bytes"
 	"fmt"
-	"github.com/steakknife/bitcoin/test/hex"
-	"github.com/steakknife/bitcoin/util/base58"
+	"github.com/hacash/bitcoin/test/hex"
+	"github.com/hacash/bitcoin/util/base58"
 	"testing"
 )
 

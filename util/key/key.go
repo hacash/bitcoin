@@ -3,8 +3,8 @@ package key
 import (
 	"crypto/subtle"
 	"errors"
-	"github.com/steakknife/bitcoin/util/base58"
-	"github.com/steakknife/bitcoin/util/checksum"
+	"github.com/hacash/bitcoin/util/base58"
+	"github.com/hacash/bitcoin/util/checksum"
 )
 
 var checksumFailure = errors.New("Checksum failure")

@@ -2,7 +2,7 @@ package key
 
 import (
 	"bytes"
-	"github.com/steakknife/bitcoin/test/hex"
+	"github.com/hacash/bitcoin/test/hex"
 	"testing"
 )
 
