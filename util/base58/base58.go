@@ -2,6 +2,7 @@ package base58
 
 import (
 	"bytes"
+	"encoding/hex"
 	"fmt"
 	"math/big"
 )
@@ -54,6 +55,7 @@ var (
 )
 
 func Encode(dec []byte) string {
+	fmt.Println( "-=-=-=-=-=", hex.EncodeToString(dec) )
 	x := (&big.Int{}).SetBytes(dec)
 	rem := big.NewInt(0) // remainder
 	r := ""              // result
