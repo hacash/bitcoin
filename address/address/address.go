@@ -19,7 +19,7 @@ func NewAddressFromPublicKey( version []byte, pubKey []byte ) ([]byte){
 }
 
 func NewAddressReadableFromAddress( address []byte ) (string){
-	addr, _ := base58check.Encode(address)
+	addr := base58check.Encode(address)
 	// 原始以及编码后的
 	return addr
 }

@@ -10,7 +10,7 @@ import (
 var checksumFailure = errors.New("Checksum failure")
 
 func Decode(encoded string) (decoded []byte, err error) {
-	decAndChksum, err := base58.Decode(encoded)
+	decAndChksum, err := base58check.Decode(encoded)
 	if err != nil {
 		return
 	}
@@ -27,5 +27,5 @@ func Decode(encoded string) (decoded []byte, err error) {
 }
 
 func Encode(decoded []byte) string {
-	return base58.Encode(append(decoded, checksum.Checksum(decoded)...))
+	return base58check.Encode(append(decoded, checksum.Checksum(decoded)...))
 }

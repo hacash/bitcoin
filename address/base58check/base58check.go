@@ -22,10 +22,10 @@ func EncodeHexString(version, data string) (string, error) {
 	if e2 != nil {
 		return "", e2
 	}
-	return EncodeWithVersion(verbytes, databytes)
+	return EncodeWithVersion(verbytes, databytes), nil
 }
 
-func EncodeWithVersion(version []byte, data []byte) (string, error) {
+func EncodeWithVersion(version []byte, data []byte) (string) {
 	prefix := make([]byte, len(version))
 	copy(prefix, version)
 	dataBytes := make([]byte, 0)
@@ -33,7 +33,7 @@ func EncodeWithVersion(version []byte, data []byte) (string, error) {
 	return Encode(dataBytes)
 }
 
-func Encode(dataBytes []byte) (string, error) {
+func Encode(dataBytes []byte) (string) {
 
 	// Performing SHA256 twice
 	sha256hash := sha256.New()
@@ -66,7 +66,7 @@ func Encode(dataBytes []byte) (string, error) {
 		encoded = "1" + encoded
 	}
 
-	return encoded, nil
+	return encoded
 }
 
 
