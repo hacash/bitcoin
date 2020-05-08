@@ -25,7 +25,7 @@ func EncodeHexString(version, data string) (string, error) {
 	return EncodeWithVersion(verbytes, databytes), nil
 }
 
-func EncodeWithVersion(version []byte, data []byte) (string) {
+func EncodeWithVersion(version []byte, data []byte) string {
 	prefix := make([]byte, len(version))
 	copy(prefix, version)
 	dataBytes := make([]byte, 0)
@@ -33,7 +33,7 @@ func EncodeWithVersion(version []byte, data []byte) (string) {
 	return Encode(dataBytes)
 }
 
-func Encode(dataBytes []byte) (string) {
+func Encode(dataBytes []byte) string {
 
 	// Performing SHA256 twice
 	sha256hash := sha256.New()
@@ -47,7 +47,6 @@ func Encode(dataBytes []byte) (string) {
 	//fmt.Println("checksum", checksum)
 	stuff := append([]byte{}, dataBytes...)
 	stuff = append(stuff, checksum...)
-
 
 	// For all the "00" versions or any prepended zeros as base58 removes them
 	zeroCount := 0
@@ -68,7 +67,6 @@ func Encode(dataBytes []byte) (string) {
 
 	return encoded
 }
-
 
 // DecodeHexString decodes the given base58check encoded string and returns the version prepended decoded string
 func Decode(encoded string) ([]byte, error) {

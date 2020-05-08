@@ -6,7 +6,7 @@ import (
 	"golang.org/x/crypto/ripemd160"
 )
 
-func NewAddressFromPublicKey( version []byte, pubKey []byte ) ([]byte){
+func NewAddressFromPublicKey(version []byte, pubKey []byte) []byte {
 
 	digest := sha256.Sum256(pubKey)
 
@@ -18,13 +18,8 @@ func NewAddressFromPublicKey( version []byte, pubKey []byte ) ([]byte){
 	return append(version, hs160...)
 }
 
-func NewAddressReadableFromAddress( address []byte ) (string){
+func NewAddressReadableFromAddress(address []byte) string {
 	addr := base58check.Encode(address)
 	// 原始以及编码后的
 	return addr
 }
-
-
-
-
-
